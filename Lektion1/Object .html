@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script defer>
+
+    // övning 1 
+    // Skriv en funktion longestWord(sentence) som tar en mening, sentence, och returnerar det längst ordet i meningenlongestWord("I love JavaScript"); // "JavaScript"
+
+    var word = longestWord("I love JavaScript")
+
+    function longestWord(sentence) {
+
+      var array = sentence.split(' ')
+
+      var word = "";
+
+      for (i = 0; i < array.length; i++) {
+        if (array[i].length > word.length) {
+          word = array[i];
+        }
+      }
+      return word;
+    }
+    console.log(word);
+
+
+    //övning 2
+    // Skriv en funktion reverseString(str) som tar en sträng, str, och returnerar strängen baklängesreverseString("Hello"); // "olleH"
+
+
+    console.log(reverseString("Hello"));
+
+    function reverseString(str) {
+
+      var array = str.split("");
+
+      var revArray = array.reverse();
+
+      return revArray.join("");
+    }
+
+    // Gör samma sak, fast mer komplicerat 
+
+    function reverseString2(str) {
+
+      var rv = "";
+
+      var i; // förtydliga att i finns utanför for-loopen
+
+      for (i = 0; i < str.length; i++) {
+        
+        rv += str.charAt(str.length - 1 - i);
+      }
+      return rv;         // rv == return value
+    }
+    console.log(reverseString2("sirap"));
+
+  </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

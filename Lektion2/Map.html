@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Map</title>
+
+  <script defer>
+    // Scope = där variablerna "lever". Var vi kan använda dem och komma åt dem i koden.
+    // Var försiktig med att använda Global scope, där hela programmet kan komma åt dem. 
+    // Använd let eller const istället för var! 
+    // Shadowing (samma variabelnamn i olika scope) 
+    // gör det svårt för oss att läsa koden, men JS kommer inte ha problem med det
+    function doubleAll(number) {
+      return number *= 2;
+    }
+    let myArray = [1, 2, 3, 4];
+    myArray = myArray.map(doubleAll);
+    // olika och mer komplicerade sätt att skriva samma sak:
+    // myArray.map(function(x) {return 2*x;})
+    // myArray = myArray.map(x => x*2); inte säker på denna?? 
+    // [1, 2, 3, 4].map(doubleAll); 
+    console.log(myArray);
+  </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

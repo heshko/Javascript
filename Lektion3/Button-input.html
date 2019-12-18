@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" id="text-input" >
+  <button id="myButton">My Button</button>
+
+  <script>
+
+    document.getElementById('myButton').addEventListener('click', onClick);
+
+    function onClick(e) {
+
+      console.log(e.target.textContent); // e == event, target elementet hände på
+    }
+
+    document.getElementById("text-input").addEventListener('input', onInput);
+
+    function onInput(e) {
+
+      document.getElementById("myButton").textContent = e.target.value;
+      
+    }
+
+    // e.preventDefualt(); == stoppar eventet från att göra det den sak göra
+
+  </script>
+
+</body>
+
+</html>

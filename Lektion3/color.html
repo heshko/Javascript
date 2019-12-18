@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <div id="myDiv"><span>Hello</span>
+    <p><span>World</span></p>
+    <p><span>Again</span></p>
+  </div>
+  <div>
+    <p>Test</p>
+  </div>
+
+
+  <script defer>
+
+    //exempel 1
+
+    // const span = document.getElementsByTagName("span");
+
+    // for (let i = 0; i < span.length; i += 1) {
+    //   if (span[i].textContent !== "Hello") {
+    //     const el = span[i];
+    //     //el.style.color = "red";
+    //     el.setAttribute("style", "color: red");
+    //   }
+    // }
+
+    // // exempel 2
+    //const spans = document.querySelectorAll("p > span");
+
+    // for (let i = 0; i < spans.length; i += 1) {
+    //   const el = spans[i];
+    //   el.setAttribute("style", "color: red;");
+    // }
+
+
+    // //exempel 3
+    const spans = document.querySelectorAll("p > span");
+    const spansArray = Array.from(spans);
+
+    spansArray.forEach((el) => {
+      el.setAttribute("style", "color: red;");
+    });
+
+  </script>
+</body>
+
+</html>

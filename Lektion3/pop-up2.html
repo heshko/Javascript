@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<style>
+  #myPopup {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(65, 42, 109);
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    display: none;
+    border: solid black 1px
+  }
+
+  #myclosedown {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: solid black 1px;
+    cursor: pointer;
+  }
+</style>
+
+
+
+
+<body>
+
+  <div>
+    <button class="click me">Click me</button>
+  </div>
+
+  <div id="myPopup">pop-up text
+    <div id="myclosedown">X</div>
+  </div>
+
+
+  <script>
+  
+  document.querySelector("button").addEventListener("click", onClick);
+  
+  document.getElementById("myclosedown").addEventListener("click", onClickClose);
+
+  function onClick(){
+
+    document.getElementById('myPopup').style.display = 'block';
+
+
+    // Detta är som en toggel , Klicka på knappen för att visa och dölja
+
+    // const el = document.getElementById("myPopup");
+
+    // console.log("HEJ");
+
+    // if (el.style.display === "block") {
+    //   el.style.display = "none";
+    // } else {
+    //   el.style.display = "block";
+    // }
+    
+    // el.style.display = el.style.display === "block"
+    //   ? "none"
+    //   : "block";
+    
+  }
+
+  function onClickClose(){
+    document.getElementById('myPopup').style.display = 'none';
+
+  }
+  
+  </script>
+
+
+</body>
+
+</html>

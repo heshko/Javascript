@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    #myPopup {
+      width: 200px;
+      height: 100px;
+      background-color: lightgrey;
+      color: black;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      display: none;
+      border: solid black 1px
+    }
+
+    #myclosedown {
+      position: absolute;
+      right: 0;
+      top: 0;
+      border: solid black 1px;
+      cursor: pointer;
+    }
+
+    #myPopup.show {
+      display: block;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div>
+    <button class="click me">Click me</button>
+  </div>
+
+  
+  <div id="myPopup">pop-up text
+    <div id="myclosedown">X</div>
+  </div>
+
+  <script>
+    document.querySelector("button").addEventListener("click", onClick);
+    document.querySelector("#myclosedown").addEventListener("click", onClick);
+
+    function onClick() {
+      const popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+
+    function onClickClose() {
+      
+      const popup = document.getElementById("myPopup");
+      const close = document.getElementById('myclosedown');
+      popup.classList.toggle("show");
+
+    }
+
+
+
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    #click-me {
+      height: 100px;
+      width: 100px;
+      background-color: blue;
+      color: aliceblue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="click-me">Click me!</div>
+
+  <input type="text" id="text-input">
+
+  <script>
+
+    const el = document.getElementById("click-me");
+    function onClick() {
+      alert("You clicked the div")
+    }
+
+    el.addEventListener("click", onClick);
+
+
+    function onChange() {
+      console.log("change");
+    }
+
+    function onInput() {
+      console.log("onInput")
+    }
+
+  </script>
+
+</body>
+
+</html>

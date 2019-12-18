@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timer</title>
+
+    <script defer>
+        /* Skapa en funktion timer som tar ett argument seconds. Funktionen ska räkna ner
+        från “seconds” till 0. Varje sekund ska funktionen skriva ut till konsolen hur många
+        sekunder som är kvar, när timern når 0 ska den skriva ut “Time!”. */
+        /*
+                setInterval(function(sec) {
+                    console.log(sec + "sekunder")
+                }, 1000);   
+        
+                function timer(sec){
+                    console.log(sec + "sekunder");
+                }*/
+        /* var timer = 10;
+         setInterval(function () {
+             console.log(timer);
+             timer--;
+             if (timer === 0) {
+                 console.log("Time!");
+             }
+         }, 1000); */
+        function timer(sec) {
+            const interval = setInterval(onTick, 1000);
+            function onTick() {
+                console.log(sec);
+                sec--;
+                if (sec <= 0) {
+                    console.log("Time!");
+                    clearInterval(interval);
+                }
+            }
+        }
+        timer(5);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

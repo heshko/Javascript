@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Array Dates</title>
+
+  <script defer>
+    /*Skapa en array som innehåller alla datum mellan 2019-07-01 och 2019-08-31.
+    Datumen ska vara formaterade som strängar.
+    T.ex
+    [“2019-07-01”, “2019-07-02”, ... , “2019-08-30”, “2019-08-31”]*/
+    // FUCKING FAIL! 
+    /* var startDate = "2019-07-01";
+     let endDate = ""
+     function createDateArray() {
+         let dateArray;
+         let currentDate;
+         for (let date = 01; date <= 31; date++) {
+             currentDate = "2019-07-" + date;
+             dateArray.push(currentDate);
+         }
+         return dateArray;
+     }
+     console.log(createDateArray()); */
+    // ANDREAS LÖSNING
+    let year = 2019;
+    let month = 7;
+    let day = 1;
+    let ar = [];
+    function zeroPad(n) {
+      if (n < 10) {
+        return "0" + n;
+      }
+      return n.toString();
+    }
+    while (!(day === 1 && month === 9)) {
+      ar.push(year + "-" + zeroPad(month) + "-" + zeroPad(day));
+      day += 1;
+      if (day > 31) {
+        month += 1;
+        day = 1;
+      }
+    }
+    console.log(ar);
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
