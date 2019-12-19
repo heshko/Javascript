@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <title>Event object</title>
+    
+  </head>  
+  <body>
+    <h1>
+      Event object
+    </h1>
+
+    <form id="my-form">
+      <label>
+        Name
+        <input autocomplete="off" id="name" type="text"> 
+      </label>
+      <input type="submit">
+    </form>
+
+    <p id="greeting">Please write your name.</p>
+
+    <script>
+      const inputEl = document.getElementById("name");
+      const formEl = document.getElementById("my-form");
+      function onInput(e) {
+        const greetingEl = document.getElementById("greeting");
+        if (e.target.value.length > 0) {
+          greetingEl.textContent = "Hej, " + e.target.value + "!";
+        } else {
+          greetingEl.textContent = "Please write your name.";
+        }
+      }
+      function onSubmit(e) {
+        e.preventDefault();
+        console.log(inputEl.value);
+      }
+      inputEl.addEventListener("input", onInput);
+      formEl.addEventListener("submit", onSubmit);
+    </script>
+
+  </body>
+</html>

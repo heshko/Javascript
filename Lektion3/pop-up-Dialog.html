@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <title>Dialog</title>
+
+    <style>
+      .dialog {
+        width: 300px;
+        height: 200px;
+        border-radius: 2px;
+        background-color: white;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.20);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.6s ease-out;
+      }
+      .dialog > p {
+        font-size: 1.5rem;
+      }
+  
+      .dialog-close {
+        position: absolute;
+        top: 0;
+        right: 0.6rem;
+        font-size: 2.5rem;
+        color: rgba(0, 0, 0, 0.8);
+        cursor: pointer;
+      }
+      .dialog-close:hover {
+        opacity: 0.6;
+      }
+      .dialog.hidden {
+        transform: translate3d(-50%, -200%, 0);
+        opacity: 0;
+      }
+      .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      .mask.hidden {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="show-dialog">Show dialog</button>
+
+    <div class="mask hidden"></div>
+    <div class="dialog hidden">
+      <div class="dialog-close">&times;</div>
+      <p>This is a dialog</p>
+    </div>
+
+
+
+    <script>
+      const buttonEl = document.querySelector("#show-dialog");
+      const dialogEl = document.querySelector(".dialog");
+      const closeEl = document.querySelector(".dialog-close");
+      const maskEl = document.querySelector(".mask");
+      
+      buttonEl.addEventListener("click", function() {
+        maskEl.classList.remove("hidden");
+        dialogEl.classList.remove("hidden");
+      });
+      closeEl.addEventListener("click", function() {
+        maskEl.classList.add("hidden");
+        dialogEl.classList.add("hidden");
+      });
+      maskEl.addEventListener("click", function() {
+        maskEl.classList.add("hidden");
+        dialogEl.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>

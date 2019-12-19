@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <title>bubbling</title>
+
+    <style>
+      #outer {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: maroon;
+      }
+      #inner {
+        width: 100px;
+        height: 100px;
+        background-color: teal;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer">
+      <div id="inner">
+      </div>
+    </div>
+
+    <div>
+      <button>My button</button>
+    </div>
+
+    <script>
+      function onClickInner(e) {
+        e.stopPropagation();
+        console.log("You clicked the inner div");
+      }
+      function onClickOuter() {
+        console.log("You clicked the outer div");
+      }
+      document.getElementById("inner").addEventListener("click", onClickInner);
+      document.getElementById("outer").addEventListener("click", onClickOuter);
+    
+    </script>
+  </body>
+</html>
