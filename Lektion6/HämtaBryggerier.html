@@ -1,0 +1,68 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hämta bryggerier</title>
+</head>
+
+<body>
+
+  <h1>Breweries</h1>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+
+  <script defer>
+
+
+    function reqListener() {
+      // console.log(this.responseText);
+      const breweries = JSON.parse(this.responseText);
+      renderBreweries(breweries);
+    }
+
+
+    function fetch() {
+
+      let oReq = new XMLHttpRequest();
+      oReq.addEventListener("load", reqListener);
+      oReq.open("GET", "https://api.openbrewerydb.org/breweries");
+      oReq.send(); // "execute", gör det vi skrev ovanför
+    }
+
+    fetch();
+
+    function renderBreweries(ar) {
+      const tbodyEl = document.querySelector("tbody");
+
+      for (let i = 0; i < ar.length; i += 1) {
+
+        const trEl = document.createElement("tr");
+        const tdNameEl = document.createElement("td");
+        const tdAddressEl = document.createElement("td");
+
+        tdNameEl.textContent = ar[i].name;
+        tdAddressEl.textContent = ar[i].street;
+
+
+        trEl.appendChild(tdNameEl);
+        trEl.appendChild(tdAddressEl);
+        tbodyEl.appendChild(trEl);
+      }
+    }
+  </script>
+
+</body>
+
+</html>

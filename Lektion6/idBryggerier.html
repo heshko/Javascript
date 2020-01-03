@@ -1,0 +1,114 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fragment Identifier Bryggerier</title>
+</head>
+
+<body>
+
+  <h1>Breweries</h1>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <br>
+  <button onClick="pageSelector(-1)">Föregående</button>
+  <button onClick="pageSelector(1)">Nästa</button>
+
+  <script>
+    // Tar info från databas/server och gör om data vi kan hantera med JavaScript
+    function reqListener() {
+
+      const breweries = JSON.parse(this.responseText);
+
+      renderBreweries(breweries);
+    }
+    function reqListenerSingle() {
+
+      const brewery = JSON.parse(this.responseText);
+
+      renderBreweries([brewery]);
+
+      // nu har vi endast 1 element, skapa en array av denna
+      // så att vår function renderBrewery kan hantera den
+
+    }
+    // Hämtar datan från hemsidan
+
+    function fetch(nr) {
+
+      let oReq = new XMLHttpRequest();
+
+      oReq.addEventListener("load", reqListener);
+
+      oReq.open("GET", "https://api.openbrewerydb.org/breweries?page=" + nr);
+
+      oReq.send(); // "execute", gör det vi skrev ovanför
+    }
+    fetch(1);
+    // måste köra functionen en gång för att den ska visas innan vi klickat på knappen
+    // håller reda på sidnumret
+
+    let pageNr = 1;
+
+    function pageSelector(input) {
+
+      pageNr += input;
+      if (pageNr < 1) pageNr = 1; // pageNr kan aldrig bli mindre än 1!
+      fetch(pageNr);
+    }
+    // Skriver ut tabellen
+
+    function renderBreweries(ar) {
+
+      const tbodyEl = document.querySelector("tbody");
+      tbodyEl.innerHTML = ""; // för att tömma tabellen mellan sidbyten
+      for (let i = 0; i < ar.length; i += 1) {
+
+        const trEl = document.createElement("tr");
+        const tdIdEl = document.createElement("td");
+        const tdNameEl = document.createElement("td");
+        const tdAddressEl = document.createElement("td");
+
+        tdIdEl.textContent = ar[i].id;
+        tdNameEl.textContent = ar[i].name;
+        tdAddressEl.textContent = ar[i].street;
+
+        trEl.appendChild(tdIdEl);
+        trEl.appendChild(tdNameEl);
+        trEl.appendChild(tdAddressEl);
+        tbodyEl.appendChild(trEl);
+      }
+      
+    }
+    function specificId(idNr) {
+
+      let oReq = new XMLHttpRequest();
+
+      oReq.addEventListener("load", reqListenerSingle);
+      oReq.open("GET", "https://api.openbrewerydb.org/breweries/" + idNr);
+      oReq.send();
+      // måste ladda om sidan när man skriver in nytt # för att den ska visas
+    }
+
+    const breweryId = window.location.hash.slice(1);
+
+    if (breweryId.length > 0) {
+      specificId(breweryId);
+    }
+  </script>
+
+</body>
+
+</html>
