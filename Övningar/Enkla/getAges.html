@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Get Ages</title>
+</head>
+
+<body>
+
+
+  <script>
+
+    // Write a function getAges that takes an array of objects as argument. 
+    // Return a new array that contains the age values set on the objects. If there doesn't exists an age, ignore the object.
+
+    function getAges(ar) {
+      let newAr = [];
+
+      for (let i = 0; i < ar.length; i++) {
+        if (typeof ar[i].age !== "undefined") {
+          const element = ar[i].age;
+          newAr.push(element);
+        }
+      }
+      console.log(newAr);
+    }
+
+    let object = { name: "Smith", age: 54 };
+    let object2 = { name: "Sophie", age: 33 };
+    let object3 = { name: "Banana" };
+    let object4 = { name: "Test", age: 0 };
+    let objectArray = [object, object2, object3, object4];
+    getAges(objectArray); // -> [54, 33];
+
+  </script>
+
+</body>
+
+</html>

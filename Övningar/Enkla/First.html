@@ -1,37 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+
 <body>
 
-<script>
-
-const array1 = [4, 9, 3];
-const array2 = [4, 9, 3];
-
-function firstAndLast (array1){
-  let firstItem = array1[0];
-  let lastItem = array2[array2.length-1];
-
-  let output = {
-    first : firstItem,
-    last : lastItem
-  };
-  
-return output;
-};
-
-const display = firstAndLast(array1);
-
-console.log(display);
+  <script>
 
 
-</script>
+    // Write a function first that takes an array as argument. The function should return the first value in the array. 
+    // When you're done, write another function last that returns the last value in the array.
 
-  
+
+    function first(ar) {
+      return ar[0];
+    }
+    function last(ar) {
+      return ar[ar.length - 1];
+    }
+    console.log(first([4, 9, 3])); // 4
+    console.log(last([4, 9, 3])); // 3
+
+// mer krånligare och skriva det 
+
+
+// const array1 = [4, 9, 3];
+// const array2 = [4, 9, 3];
+
+// function firstAndLast (array1){
+//   let firstItem = array1[0];
+//   let lastItem = array2[array2.length-1];
+
+//   let output = {
+//     first : firstItem,
+//     last : lastItem
+//   };
+
+// return output;
+// };
+
+// const display = firstAndLast(array1);
+
+// console.log(display);
+
+
+  </script>
+
+
 </body>
+
 </html>

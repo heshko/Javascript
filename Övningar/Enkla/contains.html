@@ -13,17 +13,19 @@
   <script>
 
 
-    function contains(){
-      let  = numbers.includes(2);
-  
+    // Write a function contains that takes two arguments. 
+    // The first should be an array, and the second one should be a value of any type. 
+    // The function should return whether the second argument exists inside the array.
+
+    function contains(array, element) {
+      let n = array.includes(element);
+      console.log(n);
     }
-  
-    console.log(rightNumber);
-  
-  contains([1, 2, 3], 2); // -> true
-  contains(["dog", "cat"], "cat"); // -> true
-  contains(["banana", "carrot"], "orange"); // -> false
-  
+
+    contains([1, 2, 3], 2); // -> true
+    contains(["dog", "cat"], "cat"); // -> true
+    contains(["banana", "carrot"], "orange"); // -> false
+
   </script>
 
 </body>
