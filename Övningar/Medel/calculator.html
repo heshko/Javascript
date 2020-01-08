@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <script>
+  
+  // Write a function that takes an arithmetic expression as a string argument. 
+  // Perform the calculation and return the result as a number.
+  
+function calculator(addNr) {
+
+let convert = addNr.split(" ");
+
+let number1 = parseInt(convert[0]);
+let number2 = parseInt(convert[2]);
+let cal = convert[1];
+
+let result = 0;
+
+switch (cal) {
+  case "+": 
+  result = number1 + number2;
+  break;
+  case "-":
+  result = number1 - number2;
+  break;
+  case "*":
+  result = number1 * number2;
+  break;
+  case "/":
+  result  = number1 / number2;
+  break;
+}
+return result;
+
+}
+  console.log(calculator("1 + 1"))// -> 2
+
+  </script>
+  
+</body>
+</html>

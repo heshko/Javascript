@@ -1,3 +1,10 @@
+// Om allt gick som det skulle ska ni ha fått meddelandet: "Server started, visit http://localhost:8091”
+
+// npm install 
+// npm start
+
+
+
 function fetch() {
 
   let oReq = new XMLHttpRequest();

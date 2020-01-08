@@ -7,8 +7,8 @@ function renderTable(array) {
   let createThead = document.createElement("thead"); // skapa en thead
   createTable.appendChild(createThead); // lägg den i table
 
-  let createTbody = document.createElement("tbody");
-  createTable.appendChild(createTbody);
+  let createTbody = document.createElement("tbody"); // skapa en tbody
+  createTable.appendChild(createTbody);               // lägg in den i table samma höjd som thead
 
   let createTr = document.createElement("tr"); // skapa en tr
   createThead.appendChild(createTr); // lägg deb i thead

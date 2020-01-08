@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+  function giveMePromise() {
+    return new Promise(function (resolve, reject) { // new Promise skapar ett objekt som har .then i sig
+      setTimeout(() => {                            // kör funktionen direkt efter
+        resolve('Hello from promise');
+      }, 1000);
+    });
+  }
+
+  giveMePromise()
+    .then(function (message) { // .then kallar på resolve
+      console.log(message);
+    })
+    .catch(function () {
+      console.log("ERROR");
+    })
+
+    //console.log(giveMePromise());
+
+
+
+    // this övning
+
+// const ob = {
+//   method: function () {
+//     const a = function() {
+//       this.value = 5;
+//     };
+
+//     a();
+//   },
+//   value: 10
+// };
+
+// ob.method();
+
+</script>
+
+</html>

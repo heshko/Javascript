@@ -6,7 +6,7 @@
 /* Implement your solution here */
 
 
-function renderOrderedList (array){
+function renderOrderedList (array){ // anropar renderOrderedList som är en array
 
   let orderList = document.createElement("ol"); 
   document.querySelector("main").appendChild(orderList); 
@@ -16,7 +16,6 @@ for (let i = 0; i < array.length; i++) {
   // skapa element
   
   const listTitle = document.createElement("li");
-
 
   // Ger dom ett innehåll
   

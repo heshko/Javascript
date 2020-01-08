@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+
+<script>
+
+// Write a function alternate that combines two lists by alternatingly taking elements.
+
+function alternate (array1, array2) {
+
+let newArray = [];
+
+for (let i = 0; i < array1.length; i++) {
+  
+newArray.push(array1[i]);
+newArray.push(array2[i]);
+
+}
+return newArray;
+
+}
+
+console.log(alternate(['a', 'b', 'c'], [1, 2, 3])); // -> ['a', 1, 'b', 2, 'c', 3]
+
+
+</script>
+
+</html>

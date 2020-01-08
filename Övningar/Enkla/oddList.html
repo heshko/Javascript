@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+
+// Write a function oddList that takes an array as argument. 
+// The function should return a new array containing all the odd elements in the given array.
+
+function oddList (array) {
+  let oddNr = [];
+
+for (let i = 0; i < array.length; i +=2) {
+
+  oddNr.push(array[i]);
+  
+}
+return oddNr;
+}
+
+
+
+console.log(oddList([1, 2, 3, 4])) // -> [1, 3]
+console.log(oddList(['Hello', 55, 'World'])) // -> ['Hello', 'World']
+
+</script>
+
+
+</html>
