@@ -6,9 +6,31 @@ Listan ska renderas i .container elementet. */
 
 /* Implement your solution here */
 
+getData().then(function(countriesData) {
+  const listCountries = JSON.parse(countriesData);
+  console.log(listCountries);
+  rederList(listCountries.data);
+});
 
+function rederList (array) {
+  listCountries = document.createElement("ol");
+  document.querySelector(".container").appendChild(listCountries);
 
+  for (let i = 0; i < array.length; i++) {
 
+    // skapa element
+
+     const listCountriesName = document.createElement("li");
+
+     // Ger dom ett innehåll
+
+     listCountriesName.textContent = array[i];
+
+     // Ger dom en plats i DOM
+
+     listCountries.appendChild(listCountriesName);    
+  }
+}
 
 
 /* Do not touch anything below this line */

@@ -3,11 +3,9 @@
 
 
 
-getData().then(function(data) {                // .then kallar på resolve
-  const listNames = JSON.parse(data);
+getData().then(function(dataInfo) {                // .then kallar på resolve
+  const listNames = JSON.parse(dataInfo);
   rederList(listNames.data);
-  console.log(data);
-  console.log(listNames);
 });
 
 function rederList(array) {
