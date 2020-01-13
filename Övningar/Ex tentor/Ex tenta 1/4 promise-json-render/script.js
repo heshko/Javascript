@@ -16,15 +16,12 @@ function rederList(array) {
   for (let i = 0; i < array.length; i++) {
     
     // skapa element
-
     const listName = document.createElement("li");
 
     // Ger dom ett innehåll
-
     listName.textContent = array[i].name;
 
     // Ger dom en plats i DOM
-
     listItem.appendChild(listName);
   }
 }

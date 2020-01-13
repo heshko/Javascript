@@ -46,7 +46,7 @@ function renderTable (array) {
     const tdAgeEl = document.createElement("td");
 
 
-    //Ger dom ett innehåll
+    //Ger dom ett innehåll (namn , kön, ålder)
 
     tdNameEl.textContent = array[i].name;
     tdGenderEl.textContent = array[i].gender;

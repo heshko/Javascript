@@ -9,9 +9,6 @@ Listan ska renderas i `main` elementet. */
 
 /* Implement your solution here */
 
-
-
-
 function rederList (array) {
 
   let listItems = document.createElement("ul");
@@ -21,15 +18,12 @@ function rederList (array) {
   for (let i = 0; i < array.length; i++) {
 
        // skapa element
-
        const listNames = document.createElement("li");
 
        // Ger dom ett innehåll
-
        listNames.textContent = array[i].name;
    
        // Ger dom en plats i DOM
-
       listItems.appendChild(listNames);    
   }
 }
