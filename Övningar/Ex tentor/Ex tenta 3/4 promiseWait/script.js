@@ -25,6 +25,15 @@ getData().then((values) => {                // .then kallar på resolve
 });
 
 
+function wait (values) {
+  return new Promise(function(resolve, reject){
+    setTimeout(() => {   
+      resolve(values);
+    }, 3000);
+  })
+}
+
+
 function renderTable (data) { 
 
   let createTable = document.createElement("table");
@@ -77,13 +86,6 @@ function renderTable (data) {
   });
   }
 
-  function wait (values) {
-    return new Promise(function(resolve, reject){
-      setTimeout(() => {   
-        resolve(values);
-      }, 3000);
-    })
-  }
 
 /* Do NOT touch this function */
 function getData() {

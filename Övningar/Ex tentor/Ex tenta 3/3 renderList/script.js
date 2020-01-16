@@ -41,8 +41,8 @@ createTable.style.border = " solid black 1px"
 data.elements.forEach(element => {
 
 //skapa element
-const trEl = document.createElement("tr");
-const tdNameEl = document.createElement("td");
+const trEl = document.createElement("tr");      // table row
+const tdNameEl = document.createElement("td");  // table head
 const tdNumberEl = document.createElement("td");
 const tdSymbolEl = document.createElement("td");
 
